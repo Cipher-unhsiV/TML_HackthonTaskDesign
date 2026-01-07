@@ -55,4 +55,49 @@ client_id,predicted_label
 - ```client_id``` must match the provided client identifiers
 - ```predicted_label``` must be either ```honest``` or ```malicious```
 
+---
+
+## Evaluation
+
+Your submission will be evaluated against hidden ground-truth client behavior labels.
+
+### Metrics
+
+- **Primary metric:** Accuracy  
+- **Secondary metric:** Macro F1-score (used as a tie-breaker)
+
+Participants are ranked by accuracy, with Macro F1-score used to break ties.
+
+---
+
+## Rules and Constraints
+
+- You may **not retrain** the provided model.
+- Only the provided artifacts may be used.
+- No access to raw client data is allowed.
+- All computation must be performed offline.
+
+---
+
+## Ground Truth
+
+Ground truth labels are defined by how each client was implemented in the federated learning simulation.  
+Each client is unambiguously labeled as either **honest** or **malicious**.
+
+---
+
+## What This Task Is Not
+
+- Not membership inference  
+- Not memorization analysis  
+- Not continuous score estimation  
+- Not interpretability-only analysis  
+
+---
+
+## Goal
+
+This task reflects a realistic and high-impact security challenge: **detecting malicious behavior in large-scale federated learning systems after training has completed**.
+
+
 
