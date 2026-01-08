@@ -1,0 +1,36 @@
+{
+  "framework": "PyTorch",
+  "model_architecture": "SimpleCNN",
+  "model_type": "Convolutional Neural Network",
+  "dataset": "MNIST",
+  "input_shape": [1, 28, 28],
+  "num_classes": 10,
+
+  "federated_learning": {
+    "num_clients": 100,
+    "malicious_fraction": 0.2,
+    "num_rounds": 20,
+    "local_epochs": 1,
+    "batch_size": 32,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "aggregation_method": "FedAvg"
+  },
+
+  "malicious_behavior": {
+    "type": "label_flipping",
+    "description": "Malicious clients replace true labels with random labels during local training"
+  },
+
+  "task_definition": {
+    "task_type": "binary_classification",
+    "label_space": ["honest", "malicious"],
+    "objective": "Detect malicious clients in a federated learning system using post-training artifacts only"
+  },
+
+  "constraints": {
+    "model_retraining_allowed": false,
+    "raw_client_data_access": false,
+    "client_labels_released": false
+  }
+}
