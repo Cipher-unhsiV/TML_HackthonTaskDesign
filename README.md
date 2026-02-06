@@ -28,7 +28,9 @@ This is a **binary classification task** at the client level.
 You are **not** given:
 - Raw client data  
 - Client behavior labels  
-- Descriptions of malicious strategies  
+- Descriptions of malicious strategies 
+- Intermediate client updates
+
 
 ---
 
@@ -37,6 +39,8 @@ You are **not** given:
 For each client, predict whether it is:
 - `honest`
 - `malicious`
+
+Clients labeled as malicious include any that deviated from the protocol, such as by poisoning updates, free-riding, or otherwise behaving non-compliantly.
 
 ---
 
@@ -72,7 +76,7 @@ Participants are ranked by accuracy, with Macro F1-score used to break ties.
 
 ## Rules and Constraints
 
-- You may **not retrain** the provided model.
+- - You may not retrain, fine-tune, or modify the provided model.
 - Only the provided artifacts may be used.
 - No access to raw client data is allowed.
 - All computation must be performed offline.
@@ -82,7 +86,7 @@ Participants are ranked by accuracy, with Macro F1-score used to break ties.
 ## Ground Truth
 
 Ground truth labels are defined by how each client was implemented in the federated learning simulation.  
-Each client is unambiguously labeled as either **honest** or **malicious**.
+Each client is unambiguously labeled as either honest or malicious based on its behavior during training.
 
 ---
 
@@ -97,7 +101,7 @@ Each client is unambiguously labeled as either **honest** or **malicious**.
 
 ## Goal
 
-This task reflects a realistic and high-impact security challenge: **detecting malicious behavior in large-scale federated learning systems after training has completed**.
+This task reflects a realistic and high-impact security challenge: **auditing federated learning systems to detect malicious or non-compliant clients after training has completed, without access to raw data or client updates.**.
 
 
 

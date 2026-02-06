@@ -1,3 +1,5 @@
+#FYI: This baseline ignores all the model information and predicts all the clients as honest.
+
 import json
 import csv
 import torch

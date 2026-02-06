@@ -18,9 +18,9 @@
   },
 
   "malicious_behavior": {
-    "type": "label_flipping",
-    "description": "Malicious clients replace true labels with random labels during local training"
+    "description": "Some clients deviated from the protocol in unknown ways"
   },
+  
 
   "task_definition": {
     "task_type": "binary_classification",
